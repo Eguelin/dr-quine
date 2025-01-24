@@ -12,7 +12,7 @@
 
 int main(void)
 {
-	int		i = 20;
+	int		i = 5;
 	int		fd;
 	char	nam[17];
 	char	file[19];
