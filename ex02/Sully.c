@@ -14,15 +14,15 @@ int main(void)
 {
 	int		i = 5;
 	int		fd;
-	char	nam[17];
-	char	file[19];
-	char	exe[19];
-	char	cmd[67];
+	char	nam[18];
+	char	file[20];
+	char	exe[20];
+	char	cmd[65];
 
 	IF(i <= 0, 0);
-	snprintf(nam, 17, NAM, i - 1);
-	snprintf(file, 19, FILE, nam);
-	snprintf(exe, 19, EXE, nam);
+	snprintf(nam, 18, NAM, i - 1);
+	snprintf(file, 20, FILE, nam);
+	snprintf(exe, 20, EXE, nam);
 	snprintf(cmd, 67, CMD, nam, nam);
 	fd = open(file, O_WRONLY | O_CREAT | O_TRUNC, 0644);
 	IF(fd == -1, 1);
