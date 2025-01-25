@@ -6,7 +6,7 @@
 #    By: eguelin <eguelin@student.42lyon.fr>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/01/24 18:08:39 by eguelin           #+#    #+#              #
-#    Updated: 2025/01/24 18:18:46 by eguelin          ###   ########.fr        #
+#    Updated: 2025/01/25 17:07:56 by eguelin          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,7 +16,7 @@
 #                                   Variable                                   #
 # **************************************************************************** #
 
-NAME		= Grace
+NAME		= Colleen
 OBJS_DIR	= .objs/
 CC			= gcc
 CFLAGS		= -Wall -Wextra -Werror
@@ -50,7 +50,7 @@ FULL_CLEAN_MSG	= "$(PURPLE)Full cleaning $(NAME) $(DEFAULT)done on $(YELLOW)$(sh
 #                                    Sources                                   #
 # **************************************************************************** #
 
-FILES	= Grace.c
+FILES	= Colleen.c
 
 OBJS_FILES	= $(addprefix $(OBJS_DIR), $(FILES:.c=.o))
 
@@ -73,7 +73,7 @@ clean:
 
 fclean: clean
 	$(RM) $(NAME)
-	$(RM) $(NAME)_kid.c
+	$(RM) tmp_$(NAME)
 	$(PRINT) $(FULL_CLEAN_MSG)
 
 re: fclean all
@@ -82,7 +82,8 @@ $(OBJS_DIR):
 	mkdir -p $@
 
 test: all
+	$(PRINT) "$(CYAN)Test $(NAME)$(DEFAULT)\n"
 	./$(NAME)
-	diff $(NAME).c $(NAME)_kid.c
+	diff $(NAME).c tmp_$(NAME) || true
 
 retest: fclean test

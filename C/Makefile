@@ -6,7 +6,7 @@
 #    By: eguelin <eguelin@student.42lyon.fr>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/01/24 18:08:39 by eguelin           #+#    #+#              #
-#    Updated: 2025/01/24 18:19:09 by eguelin          ###   ########.fr        #
+#    Updated: 2025/01/25 17:23:42 by eguelin          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,8 +16,7 @@
 #                                   Variable                                   #
 # **************************************************************************** #
 
-NAME		= Colleen
-OBJS_DIR	= .objs/
+NAME		= Dr_Quine
 CC			= gcc
 CFLAGS		= -Wall -Wextra -Werror
 PRINT		= @printf
@@ -47,42 +46,33 @@ CLEAN_MSG		= "$(RED)Cleaning $(NAME) $(DEFAULT)done on $(YELLOW)$(shell date +'%
 FULL_CLEAN_MSG	= "$(PURPLE)Full cleaning $(NAME) $(DEFAULT)done on $(YELLOW)$(shell date +'%Y-%m-%d %H:%M:%S')$(DEFAULT)\n"
 
 # **************************************************************************** #
-#                                    Sources                                   #
-# **************************************************************************** #
-
-FILES	= Colleen.c
-
-OBJS_FILES	= $(addprefix $(OBJS_DIR), $(FILES:.c=.o))
-
-# **************************************************************************** #
 #                                     Rules                                    #
 # **************************************************************************** #
 
 all: $(NAME)
 
-$(NAME): $(OBJS_FILES)
-	$(CC) $(CFLAGS) $(OBJS_FILES) -o $(NAME)
-	$(PRINT) $(COMP_MSG)
-
-$(OBJS_DIR)%.o: %.c | $(OBJS_DIR)
-	$(CC) $(CFLAGS) -c $< -o $@
+$(NAME):
+	$(MAKE) -C Colleen
+	$(MAKE) -C Grace
+	$(MAKE) -C Sully
 
 clean:
-	$(RM) $(OBJS_DIR)
+	$(MAKE) -C Colleen clean
+	$(MAKE) -C Grace clean
+	$(MAKE) -C Sully clean
 	$(PRINT) $(CLEAN_MSG)
 
-fclean: clean
-	$(RM) $(NAME)
-	$(RM) tmp_Colleen
+fclean:
+	$(MAKE) -C Colleen fclean
+	$(MAKE) -C Grace fclean
+	$(MAKE) -C Sully fclean
 	$(PRINT) $(FULL_CLEAN_MSG)
 
 re: fclean all
 
-$(OBJS_DIR):
-	mkdir -p $@
-
 test: all
-	./$(NAME)
-	diff $(NAME).c tmp_$(NAME)
+	$(MAKE) -C Colleen test
+	$(MAKE) -C Grace test
+	$(MAKE) -C Sully test
 
 retest: fclean test

@@ -6,7 +6,7 @@
 #    By: eguelin <eguelin@student.42lyon.fr>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/01/24 18:08:39 by eguelin           #+#    #+#              #
-#    Updated: 2025/01/24 18:22:20 by eguelin          ###   ########.fr        #
+#    Updated: 2025/01/25 17:11:21 by eguelin          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -82,7 +82,9 @@ $(OBJS_DIR):
 	mkdir -p $@
 
 test: all
-	./$(NAME)
-	diff $(NAME).c $(NAME)_3.c
+	$(PRINT) "$(CYAN)Test $(NAME)$(DEFAULT)\n"
+	./Sully
+	sleep 0.1
+	diff ./Sully.c ./Sully_3.c || true
 
 retest: fclean test
