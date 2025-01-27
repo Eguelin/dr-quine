@@ -6,7 +6,7 @@
 #    By: eguelin <eguelin@student.42lyon.fr>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/01/24 18:08:39 by eguelin           #+#    #+#              #
-#    Updated: 2025/01/26 18:43:24 by eguelin          ###   ########.fr        #
+#    Updated: 2025/01/27 18:16:37 by eguelin          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -75,7 +75,7 @@ clean:
 
 fclean: clean
 	$(RM) $(NAME)
-	$(RM) $(NAME)_X
+	$(RM) $(NAME)_*
 	$(PRINT) $(FULL_CLEAN_MSG)
 
 re: fclean all
