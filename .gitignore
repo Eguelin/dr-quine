@@ -2,7 +2,6 @@
 !.gitignore
 !*.c
 !*.s
-!*.rs
 !*/
 !Makefile
 !README.md
