@@ -9,7 +9,9 @@
     - Unix
     - Imperative programming
 - **Tools:**
+    - NASM
     - C
+    - C++
     - Makefile
 
 ## Table of Contents
