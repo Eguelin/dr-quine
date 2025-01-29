@@ -34,12 +34,12 @@ it is considered cheating.
 
 - **Grace:**
 
-    The second program, `Grace`, is a quine that writes its own source code in `Grace_kid.c`.
-    `Grace.c` must only use #define macros.
+    The second program, `Grace`, is a quine that writes its own source code in `Grace_kid.c/.s/.cpp`.
+    `Grace.c/.s/.cpp` must only use #define and a macro to execute the program.
 
 - **Sully:**
 
-    The third program, `Sully`, is a quine that writes its own source code in `Sully_X.c`. It compiles and executes `Sully_X.c` as long as ```X > 0```.
+    The third program, `Sully`, is a quine that writes its own source code in `Sully_X.c/.s/.cpp`. It compiles and executes `Sully_X.c/.s/.cpp` as long as ```X > 0```.
 
 ## III. Resources and Recommendations
 
