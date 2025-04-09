@@ -6,7 +6,7 @@
 #    By: eguelin <eguelin@student.42lyon.fr>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/01/24 18:08:39 by eguelin           #+#    #+#              #
-#    Updated: 2025/01/25 18:32:38 by eguelin          ###   ########.fr        #
+#    Updated: 2025/04/09 16:59:20 by eguelin          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -85,7 +85,7 @@ $(OBJS_DIR):
 
 test: all
 	$(PRINT) "$(CYAN)Test $(NAME)$(DEFAULT)\n"
-	./$(NAME)
+	./$(NAME) > tmp_$(NAME)
 	diff $(NAME).s tmp_$(NAME) || true
 
 retest: fclean test
