@@ -6,7 +6,7 @@
 #    By: eguelin <eguelin@student.42lyon.fr>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/01/24 18:08:39 by eguelin           #+#    #+#              #
-#    Updated: 2025/04/09 16:59:20 by eguelin          ###   ########.fr        #
+#    Updated: 2025/04/12 18:17:47 by eguelin          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -75,7 +75,7 @@ clean:
 
 fclean: clean
 	$(RM) $(NAME)
-	$(RM) tmp_$(NAME)
+	$(RM) tmp
 	$(PRINT) $(FULL_CLEAN_MSG)
 
 re: fclean all
@@ -85,7 +85,7 @@ $(OBJS_DIR):
 
 test: all
 	$(PRINT) "$(CYAN)Test $(NAME)$(DEFAULT)\n"
-	./$(NAME) > tmp_$(NAME)
-	diff $(NAME).s tmp_$(NAME) || true
+	./$(NAME) > tmp
+	diff $(NAME).s tmp || true
 
 retest: fclean test
