@@ -30,7 +30,7 @@ it is considered cheating.
 
 - **Colleen:**
 
-    The first program, `Colleen`, is a quine that prints its own source code in `tmp_Colleen`.
+    The first program, `Colleen`, is a quine that prints its own source code in standard output.
 
 - **Grace:**
 
